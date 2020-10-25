@@ -3,7 +3,8 @@ from countries.models import Countries
 
 class CountriesSerializer(serializers.ModelSerializer):
 
+ 
+
     class Meta:
         model=Countries
         fields=('id','name','capital')
-        
