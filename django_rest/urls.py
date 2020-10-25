@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url,include
+import countries.views
+
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^api/countries$',countries.views.countries_list ),
+    url(r'^api/countries/(?P<pk>[0-9]+)$',countries.views.countries_detail),
+
 ]
