@@ -18,7 +18,7 @@ def countries_list(request):
         countries_data=JSONParser().parse(request)
         countries_serializer=CountriesSerializer(data=countries_data)
         if countries_serializer.is_valid():
-            countries.serializer.save()
+            countries_serializer.save()
             return JsonResponse(countries_serializer.data,status=status.HTTP_201_CREATED)
         return JsonResponse(countries_serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 @api_view(['GET','POST','DELETE'])
